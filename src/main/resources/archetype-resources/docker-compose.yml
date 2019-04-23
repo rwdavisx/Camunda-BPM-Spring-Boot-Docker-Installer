@@ -1,0 +1,28 @@
+version: '3.7'
+
+services:
+  bpm:
+    build:
+      context: ../../../..
+      dockerfile: Dockerfile
+      args: 
+        - ee_username=indiana_farm_bureau_insurance
+        - ee_password=be3c8276-3523-48a5-9
+    image: bpm
+    ports:
+      - 8443:8443
+    depends_on:
+      - db
+
+  db:
+    image: postgres
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=camunda
+      - POSTGRES_PASSWORD=camunda_password
+    volumes:
+      - camunda-data:/var/lib/postgresql/data
+
+volumes:
+  camunda-data:

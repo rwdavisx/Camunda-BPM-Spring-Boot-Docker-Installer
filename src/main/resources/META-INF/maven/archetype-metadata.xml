@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archetype-descriptor name="${artifactId}">
+    <requiredProperties>
+        <requiredProperty key="groupId">
+            <defaultValue>com.infarmbureau</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="artifactId"/>
+        <requiredProperty key="version">
+            <defaultValue>1.0</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="package">
+            <defaultValue>com.infarmbureau.__rootArtifactId__</defaultValue>
+        </requiredProperty>
+    </requiredProperties>
+    <fileSets>
+        <fileSet filtered="true" encoding="UTF-8">
+            <directory></directory>
+            <includes>
+                <include>.gitignore</include>
+                <include>docker-compose.yml</include>
+                <include>Dockerfile</include>
+                <include>readme.md</include>
+            </includes>
+        </fileSet>
+        <fileSet filtered="true" packaged="false" encoding="UTF-8">
+            <directory>src/main/groovy/</directory>
+            <includes>
+                <include>**/*.groovy</include>
+            </includes>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8" >
+            <directory>src/main/resources</directory>
+            <includes>
+                <include>**/*.bpmn</include>
+                <include>**/*.properties</include>
+                <include>**/*.xml</include>
+            </includes>
+        </fileSet>
+        <fileSet filtered="true" packaged="false" encoding="UTF-8">
+            <directory>src/test/groovy/</directory>
+            <includes>
+                <include>**/*.groovy</include>
+            </includes>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+            <directory>src/test/resources</directory>
+        </fileSet>
+    </fileSets>
+</archetype-descriptor>
