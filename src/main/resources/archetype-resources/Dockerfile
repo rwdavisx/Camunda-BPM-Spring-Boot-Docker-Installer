@@ -10,7 +10,7 @@ RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 COPY ../../../../pom.xml pom.xml
 COPY ../../../.. .
-COPY ../../../../settings.xml /root/.m2/settings.xml
+COPY settings.xml /root/.m2/settings.xml
 RUN mvn -pl '!starter-business,!starter-camunda' clean package
 
 #
