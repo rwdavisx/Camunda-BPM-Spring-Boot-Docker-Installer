@@ -1,4 +1,4 @@
-package com.infarmbureau.example.bpm.process.welcome.delegate
+package ${groupId}.${rootArtifactId}.bpm.process.welcome.delegate
 import com.infarmbureau.example.bpm.process.welcome.WelcomeProcessVariables
 import org.camunda.bpm.engine.delegate.BpmnError
 import org.camunda.bpm.engine.delegate.DelegateExecution

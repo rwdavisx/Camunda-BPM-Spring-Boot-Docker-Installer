@@ -1,4 +1,4 @@
-package ${groupId}.${rootArtifactId}.bpm.process.init.delegate
+package ${groupId}.${rootArtifactId}.bpm.process.welcome.delegate
 
 class WelcomeDelegateTest {
 }
