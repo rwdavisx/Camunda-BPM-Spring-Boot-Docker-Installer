@@ -1,5 +1,5 @@
-package ${groupId}.${rootArtifactId}.bpm.process.init.delegate.welcome
-import ${groupId}.${rootArtifactId}.bpm.process.init.InitProcessVariables
+package com.infarmbureau.example.bpm.process.welcome.delegate
+import com.infarmbureau.example.bpm.process.welcome.WelcomeProcessVariables
 import org.camunda.bpm.engine.delegate.BpmnError
 import org.camunda.bpm.engine.delegate.DelegateExecution
 import org.camunda.bpm.engine.delegate.JavaDelegate
@@ -9,14 +9,14 @@ import org.springframework.stereotype.Component
 
 @Component
 class WelcomeDelegate implements JavaDelegate {
-    private static final Logger LOGGER = LoggerFactory.getLogger(WelcomeDelegate.class)
+    private static final Logger LOGGER = LoggerFactory.getLogger(com.infarmbureau.example.bpm.process.welcome.delegate.WelcomeDelegate.class)
 
     private Map<String, Object> outputVariables
 
     @Override
     void execute(DelegateExecution execution) throws Exception {
         LOGGER.info("Entering ${execution.processDefinitionId}")
-        InitProcessVariables vars = new InitProcessVariables(execution)
+        WelcomeProcessVariables vars = new WelcomeProcessVariables(execution)
         String message = vars.getWelcomeMessage()
         try {
             outputVariables = showMessage(message)
