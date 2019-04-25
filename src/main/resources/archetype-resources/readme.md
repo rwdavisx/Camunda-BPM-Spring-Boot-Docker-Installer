@@ -165,3 +165,8 @@ Indiana Farm Bureau Insurance;unlimited
 > These keys are tied to the lifecycle of the database you run locally.
 > A persistent database will need these keys entered once, but the default (h2)
 > database restarts each time camunda is ran and need to be supplied each time.
+
+### Testing
+
+> Note: You can not test timer events because of a Camunda limitation.
+> Write tests around timers if you need to test a process with a timer.

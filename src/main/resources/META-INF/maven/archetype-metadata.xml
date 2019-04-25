@@ -8,9 +8,6 @@
         <requiredProperty key="version">
             <defaultValue>1.0</defaultValue>
         </requiredProperty>
-        <requiredProperty key="package">
-            <defaultValue>com.infarmbureau.__rootArtifactId__</defaultValue>
-        </requiredProperty>
     </requiredProperties>
     <fileSets>
         <fileSet filtered="true" encoding="UTF-8">
@@ -22,7 +19,7 @@
                 <include>readme.md</include>
             </includes>
         </fileSet>
-        <fileSet filtered="true" packaged="false" encoding="UTF-8">
+        <fileSet filtered="true" encoding="UTF-8">
             <directory>src/main/groovy/</directory>
             <includes>
                 <include>**/*.groovy</include>
@@ -37,7 +34,7 @@
                 <include>**/keystore.p12</include>
             </includes>
         </fileSet>
-        <fileSet filtered="true" packaged="false" encoding="UTF-8">
+        <fileSet filtered="true" encoding="UTF-8">
             <directory>src/test/groovy/</directory>
             <includes>
                 <include>**/*.groovy</include>

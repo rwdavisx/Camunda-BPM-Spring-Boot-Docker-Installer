@@ -1,11 +1,11 @@
-package ${groupId}.${rootArtifactId}.bpm
+package com.infarmbureau.${rootArtifactId}.bpm
 
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
 
-@SpringBootApplication(scanBasePackages = "${groupId}")
+@SpringBootApplication
 class SpringBootApp {
     private static final Logger LOGGER = LoggerFactory.getLogger(SpringBootApp.class)
 

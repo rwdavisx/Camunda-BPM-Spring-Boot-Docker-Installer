@@ -3,7 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>${groupId}</groupId>
+    <groupId>com.infarmbureau</groupId>
     <artifactId>${artifactId}</artifactId>
     <version>${version}</version>
     <packaging>jar</packaging>
@@ -30,7 +30,7 @@
         <test.src.dir>src/test/groovy</test.src.dir>
         <test.rsc.dir>src/test/resources</test.rsc.dir>
         <groovy.version>2.5.5</groovy.version>
-        <start-class>${groupId}.${rootArtifactId}.bpm.SpringBootApp</start-class>
+        <start-class>com.infarmbureau.${rootArtifactId}.bpm.SpringBootApp</start-class>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -103,24 +103,40 @@
     </dependencies>
     <build>
         <plugins>
+<!--            <plugin>-->
+<!--                <artifactId>maven-compiler-plugin</artifactId>-->
+<!--                <version>3.8.0</version>&lt;!&ndash; 3.6.2 is the minimum &ndash;&gt;-->
+<!--                <configuration>-->
+<!--                    <compilerId>groovy-eclipse-compiler</compilerId>-->
+<!--                </configuration>-->
+<!--                <dependencies>-->
+<!--                    <dependency>-->
+<!--                        <groupId>org.codehaus.groovy</groupId>-->
+<!--                        <artifactId>groovy-eclipse-compiler</artifactId>-->
+<!--                        <version>3.3.0-01</version>-->
+<!--                    </dependency>-->
+<!--                    <dependency>-->
+<!--                        <groupId>org.codehaus.groovy</groupId>-->
+<!--                        <artifactId>groovy-eclipse-batch</artifactId>-->
+<!--                        <version>2.5.6-01</version>-->
+<!--                    </dependency>-->
+<!--                </dependencies>-->
+<!--            </plugin>-->
             <plugin>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.0</version><!-- 3.6.2 is the minimum -->
-                <configuration>
-                    <compilerId>groovy-eclipse-compiler</compilerId>
-                </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.codehaus.groovy</groupId>
-                        <artifactId>groovy-eclipse-compiler</artifactId>
-                        <version>3.3.0-01</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.codehaus.groovy</groupId>
-                        <artifactId>groovy-eclipse-batch</artifactId>
-                        <version>2.5.6-01</version>
-                    </dependency>
-                </dependencies>
+                <groupId>org.codehaus.gmavenplus</groupId>
+                <artifactId>gmavenplus-plugin</artifactId>
+                <version>1.6.2</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>addSources</goal>
+                            <goal>addTestSources</goal>
+                            <goal>compile</goal>
+                            <goal>compileTests</goal>
+                            <goal>execute</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

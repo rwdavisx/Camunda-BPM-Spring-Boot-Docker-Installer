@@ -1,15 +1,21 @@
-package ${groupId}.${rootArtifactId}.bpm.process.welcome.delegate
-import com.infarmbureau.example.bpm.process.welcome.WelcomeProcessVariables
+package com.infarmbureau.${rootArtifactId}.bpm.process.welcome.delegate
+
+import com.infarmbureau.${rootArtifactId}.bpm.process.welcome.WelcomeProcessVariables
+import com.infarmbureau.${rootArtifactId}.bpm.service.welcome.WelcomeService
 import org.camunda.bpm.engine.delegate.BpmnError
 import org.camunda.bpm.engine.delegate.DelegateExecution
 import org.camunda.bpm.engine.delegate.JavaDelegate
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
 
 @Component
 class WelcomeDelegate implements JavaDelegate {
-    private static final Logger LOGGER = LoggerFactory.getLogger(com.infarmbureau.example.bpm.process.welcome.delegate.WelcomeDelegate.class)
+    private static final Logger LOGGER = LoggerFactory.getLogger(WelcomeDelegate.class)
+
+    @Autowired
+    WelcomeService welcomeService
 
     private Map<String, Object> outputVariables
 
@@ -28,7 +34,7 @@ class WelcomeDelegate implements JavaDelegate {
     }
 
     Map<String, Object> showMessage(String message) {
-        println "${message}"
+        welcomeService.printMessage(message)
         return [sentMessage: true]
     }
 }

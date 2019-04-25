@@ -1,4 +1,4 @@
-package ${groupId}.${rootArtifactId}.bpm.util
+package com.infarmbureau.${rootArtifactId}.bpm.util
 
 import org.camunda.bpm.engine.RuntimeService
 import org.camunda.bpm.engine.TaskService
