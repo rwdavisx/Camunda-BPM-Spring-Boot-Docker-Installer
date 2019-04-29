@@ -58,6 +58,10 @@
             <artifactId>camunda-engine</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.camunda.bpm</groupId>
+            <artifactId>camunda-engine-rest</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.camunda.bpm.springboot</groupId>
             <artifactId>camunda-bpm-spring-boot-starter-webapp-ee</artifactId>
             <version>3.2.1</version>

@@ -20,5 +20,6 @@ FROM openjdk:8-jdk-alpine
 VOLUME /tmp
 #RUN mkdir -p /usr/local
 COPY --from=build /usr/src/app/${artifactId}/target/${artifactId}-${version}.jar /usr/local/app.jar
+EXPOSE 8080
 EXPOSE 8443
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/usr/local/app.jar", "--spring.config.location=file:./config/application-default.properties,file:env.properties"]
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/usr/local/app.jar", "--spring.config.additional-location=file:/usr/local/env.properties"]

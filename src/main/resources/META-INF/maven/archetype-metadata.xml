@@ -16,6 +16,7 @@
                 <include>.gitignore</include>
                 <include>docker-compose.yml</include>
                 <include>Dockerfile</include>
+                <include>env.properties</include>
                 <include>settings.xml</include>
             </includes>
         </fileSet>
