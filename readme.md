@@ -10,7 +10,7 @@ To get setup for local camunda bpm development:
     mvn -v
     ```
     
-2)  Clone and install the camunda-starter archetype and generate a new project from that
+2)  Clone, install, and generate from the camunda-starter archetype
     ```bash
     git clone http://bitbucket.infarmbureau.com:7990/scm/icaf/camunda-starter.git && \
     cd camunda-starter && \
@@ -21,6 +21,7 @@ To get setup for local camunda bpm development:
     -DarchetypeArtifactId=camunda-starter \
     -DarchetypeVersion=1.0
     ```
+    > You will be prompted for an artifactId. This should be a custom name for your new project.
 
 3)  Complete the **Before Running Camunda** licensing section below.
 
