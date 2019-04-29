@@ -14,14 +14,15 @@ To get setup for local camunda bpm development:
     ```bash
     git clone http://bitbucket.infarmbureau.com:7990/scm/icaf/camunda-starter.git && \
     cd camunda-starter && \
-    mvn clean install && cd .. && \
+    mvn clean install && \
+    cd .. && \
     mvn archetype:generate \
     -DarchetypeGroupId=com.infarmbureau \
     -DarchetypeArtifactId=camunda-starter \
     -DarchetypeVersion=1.0
     ```
 
-3)  Complete the [before running camunda](#### Before running Camunda) section of the camunda licensing section.
+3)  Complete the **Before Running Camunda** licensing section below.
 
 4)  Open the root level of your project and run
     ```bash
@@ -32,7 +33,7 @@ To get setup for local camunda bpm development:
     local BPM instance that runs on the default port [http://localhost:8443/](http://localhost:8443/).
     The default login credentials are Username: demo / Password: demo
     
-6) Complete the [after startup](#### After Startup) part of the licensing section.
+6) Complete the **After Startup** part of the licensing section below.
 
 7) You should now have a fully unlocked local instance of Camunda enterprise running.
 
@@ -100,13 +101,16 @@ configuration to your ~/.m2/settings.xml
 In order to use the Camunda Enterprise webapp, a license key is required.
 
 Please use the following license key to enable enterprise features of the Camunda BPM platform:
+
 --------------- BEGIN CAMUNDA BPM LICENSE KEY ---------------
 KdlmYkgXpsXEIxhQwycBD4VMORQye5Em41SMU4cehS3RWNTDs74PN7SAEY1NN
 m6Zb2GF1MlYGNxp9xo64Ed5oFsHuPKqKVI8/dx6GPM0MFdoHKY+3YFkZ1YiKu
 sPjDxpku53lt0K6SXCtxA7i7nQOoG+VFYjH5vmbcB9y1w//uo=; Indiana Farm Bureau
-Insurance;unlimited--------------- END CAMUNDA BPM LICENSE KEY---------------
+Insurance;unlimited
+--------------- END CAMUNDA BPM LICENSE KEY---------------
 
 To unlock Optimize, please use the following license key:
+
 --------------- BEGIN OPTIMIZE LICENSE KEY ---------------
 gXz2RV0uvY3h1OLK8/Uu3sg8iPmWPjA0dGDRLx9HBY0rSqzjmoXJLKsvzR
 QhDkBrTOVX+GO9mrHaTjS8bawIDfJwPBRd2gX3sMnYtH4jVZqYhT3UFBwN
