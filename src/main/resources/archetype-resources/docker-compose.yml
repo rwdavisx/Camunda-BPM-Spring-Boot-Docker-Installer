@@ -14,7 +14,7 @@ services:
       - 8443:8443
     volumes:
       - type: bind
-        source: env.properties
+        source: ${PWD}/env.properties
         target: /usr/local/env.properties
 ## Persistent Database Configuration
 #    depends_on:
