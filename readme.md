@@ -63,16 +63,15 @@ This will build a new docker image with the name camunda-app
 
 To run the container
 ```bash
-docker run -p 8080:8080 -p 8443:8443 \
--v ~/Desktop/application.properties:/application.properties \
-my-camunda-app
+docker run -p 8080:8080 -p 8443:8443 -d -n my-camunda-app \
+-v ~/PathToACustomPropertiesFile/prod.properties:/application.properties \
+camunda-app
 ```
+> You can provide the optional -v argument to inject application.properties at runtime.
 
-where *~/Desktop/application.properties* is the path of a properties file you want applied at runtime.
 
-> An easy way to run a persistent database locally is to use a containerized database
-> that is supported by Camunda.
-> 
+An easy way to run a persistent database locally is to use a containerized database
+that is supported by Camunda.
 > For example with postgres:
 > ```bash
 > docker run --name postgres -d -p 5432:5432 -e POSTGRES_USER=camunda -e POSTGRES_PASSWORD=camunda_password postgres
