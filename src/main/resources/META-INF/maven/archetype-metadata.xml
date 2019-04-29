@@ -16,7 +16,7 @@
                 <include>.gitignore</include>
                 <include>docker-compose.yml</include>
                 <include>Dockerfile</include>
-                <include>readme.md</include>
+                <include>settings.xml</include>
             </includes>
         </fileSet>
         <fileSet filtered="true" encoding="UTF-8">

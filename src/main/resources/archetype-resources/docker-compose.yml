@@ -3,26 +3,28 @@ version: '3.7'
 services:
   bpm:
     build:
-      context: ../../../..
+      context: .
       dockerfile: Dockerfile
-      args: 
+      args:
         - ee_username=indiana_farm_bureau_insurance
         - ee_password=be3c8276-3523-48a5-9
-    image: bpm
+    image: camunda-app
     ports:
+      - 8080:8080
       - 8443:8443
-    depends_on:
-      - db
-
-  db:
-    image: postgres
-    ports:
-      - 5432:5432
-    environment:
-      - POSTGRES_USER=camunda
-      - POSTGRES_PASSWORD=camunda_password
-    volumes:
-      - camunda-data:/var/lib/postgresql/data
-
-volumes:
-  camunda-data:
+## Persistent Database Configuration
+#    depends_on:
+#      - db
+#
+#  db:
+#    image: postgres
+#    ports:
+#      - 5432:5432
+#    environment:
+#      - POSTGRES_USER=camunda
+#      - POSTGRES_PASSWORD=camunda_password
+#    volumes:
+#      - camunda-data:/var/lib/postgresql/data
+#
+#volumes:
+#  camunda-data:

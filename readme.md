@@ -57,26 +57,19 @@ Open the provided *WelcomeProcess.bpmn* for a reference as to how code integrate
 ---
 Go to the root of your application:
 ```bash
-docker build . camunda-app
+docker-compose build
 ```
 
-This will build a new docker image with the name camunda-app
+This will build a containerized image of your application.
 
-To run the container
+To start the container
 ```bash
-docker run -p 8080:8080 -p 8443:8443 -d -n my-camunda-app \
--v ~/PathToACustomPropertiesFile/prod.properties:/application.properties \
-camunda-app
+docker-compose up
 ```
-> You can provide the optional -v argument to inject application.properties at runtime.
 
-
-An easy way to run a persistent database locally is to use a containerized database
-that is supported by Camunda.
-> For example with postgres:
-> ```bash
-> docker run --name postgres -d -p 5432:5432 -e POSTGRES_USER=camunda -e POSTGRES_PASSWORD=camunda_password postgres
-> ```
+An easy way to use a persistent database with your camunda instance locally
+is to use a containerized database that is supported by Camunda.
+> For example with postgres, you can uncomment the postgres section in docker-compose to start it up.
 > *ProcessEngineConfiguration.groovy* should be modified to point to this database.
 
 ### Camunda Enterprise Edition Licensing
@@ -84,6 +77,7 @@ that is supported by Camunda.
 #### Before running Camunda
 To get Camunda Enterprise working locally, be sure to add the following 
 configuration to your ~/.m2/settings.xml
+    
     ```xml
     <settings>
       <servers>
