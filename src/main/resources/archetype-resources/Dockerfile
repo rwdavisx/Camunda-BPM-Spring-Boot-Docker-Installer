@@ -21,6 +21,4 @@ VOLUME /tmp
 #RUN mkdir -p /usr/local
 COPY --from=build /usr/src/app/${artifactId}/target/${artifactId}-${version}.jar /usr/local/app.jar
 EXPOSE 8443
-EXPOSE 8080
-#, "--spring.config.location=file:/config/,file:/"
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/usr/local/app.jar"]
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/usr/local/app.jar", "--spring.config.location=file:./config/application-default.properties,file:env.properties"]

@@ -10,7 +10,6 @@ services:
         - ee_password=be3c8276-3523-48a5-9
     image: camunda-app
     ports:
-      - 8080:8080
       - 8443:8443
 ## Persistent Database Configuration
 #    depends_on:

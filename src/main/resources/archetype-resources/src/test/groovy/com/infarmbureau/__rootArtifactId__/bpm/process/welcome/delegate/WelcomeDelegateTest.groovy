@@ -16,17 +16,12 @@ class WelcomeDelegateTest {
     private WelcomeDelegate welcomeDelegate
 
     @Test
-    void WelcomeDelegateMainTest() {
+    void WelcomeDelegateDefaultTest() {
         String message = "Hello World!"
-        Map<String, Object> expectedVariables
+        Map<String, Object> expectedVariables = [sentMessage: true]
         Map<String, Object> outputVariables
 
         outputVariables = welcomeDelegate.showMessage(message)
         assertTrue(outputVariables == expectedVariables)
-    }
-
-    @Test
-    void PoliciesFoundTest() {
-
     }
 }
