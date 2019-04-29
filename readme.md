@@ -15,7 +15,8 @@ To get setup for local camunda bpm development:
     git clone http://bitbucket.infarmbureau.com:7990/scm/icaf/camunda-starter.git && \
     cd camunda-starter && \
     mvn clean install && \
-    cd .. && \
+    cd .. && 
+    rm -rf camunda-starter && \
     mvn archetype:generate \
     -DarchetypeGroupId=com.infarmbureau \
     -DarchetypeArtifactId=camunda-starter \
