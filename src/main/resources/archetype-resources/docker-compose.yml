@@ -6,16 +6,11 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-        - ee_username=indiana_farm_bureau_insurance
-        - ee_password=be3c8276-3523-48a5-9
+        - environment=dev #placeholder
     image: camunda-app
     ports:
       - 8080:8080
       - 8443:8443
-    volumes:
-      - type: bind
-        source: ${PWD}/env.properties
-        target: /usr/local/env.properties
 ## Persistent Database Configuration
 #    depends_on:
 #      - db

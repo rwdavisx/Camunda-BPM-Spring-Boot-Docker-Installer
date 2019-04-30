@@ -2,24 +2,22 @@
 # Build stage
 #
 FROM maven:slim AS build
-ARG ee_username
-ARG ee_password
-ENV ee_username=$ee_username
-ENV ee_password=$ee_password
+ARG environment
+ENV ee_username=indiana_farm_bureau_insurance
+ENV ee_password=be3c8276-3523-48a5-9
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app/${artifactId}
 COPY pom.xml pom.xml
 COPY . .
 COPY settings.xml /root/.m2/settings.xml
-RUN mvn clean package
+RUN mvn clean package -P $environment
 
 #
 # Package stage
 #
 FROM openjdk:8-jdk-alpine
 VOLUME /tmp
-#RUN mkdir -p /usr/local
 COPY --from=build /usr/src/app/${artifactId}/target/${artifactId}-${version}.jar /usr/local/app.jar
 EXPOSE 8080
 EXPOSE 8443
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/usr/local/app.jar", "--spring.config.additional-location=file:/usr/local/env.properties"]
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/usr/local/app.jar"]
