@@ -1,6 +1,6 @@
 package com.infarmbureau.${rootArtifactId}.bpm
 
-import com.infarmbureau.demo.bpm.util.AppProperties
+import com.infarmbureau.${rootArtifactId}.bpm.util.AppProperties
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
