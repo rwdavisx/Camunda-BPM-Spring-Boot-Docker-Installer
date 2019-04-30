@@ -13,7 +13,7 @@
         <fileSet filtered="true" encoding="UTF-8">
             <directory></directory>
             <includes>
-                <include>.gitignore</include>
+                <include>*.gitignore</include>
                 <include>docker-compose.yml</include>
                 <include>Dockerfile</include>
                 <include>settings.xml</include>
