@@ -44,6 +44,8 @@
         <spring.version>2.1.2.RELEASE</spring.version>
         <java.version>1.8</java.version>
         <groovy.version>2.5.6</groovy.version>
+        <camunda.version>7.12.0</camunda.version>
+        <camunda-springboot.version>3.4.0</camunda-springboot.version>
         <start-class>com.infarmbureau.${rootArtifactId}.bpm.SpringBootApp</start-class>
     </properties>
     <dependencyManagement>
@@ -51,7 +53,7 @@
             <dependency>
                 <groupId>org.camunda.bpm</groupId>
                 <artifactId>camunda-bom</artifactId>
-                <version>7.10.0-ee</version>
+                <version>${camunda.version}-ee</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
@@ -74,16 +76,17 @@
         <dependency>
             <groupId>org.camunda.bpm</groupId>
             <artifactId>camunda-engine</artifactId>
+            <version>${camunda.version}</version>
         </dependency>
         <dependency>
             <groupId>org.camunda.bpm.springboot</groupId>
             <artifactId>camunda-bpm-spring-boot-starter-rest</artifactId>
-            <version>3.2.0</version>
+            <version>${camunda-springboot.version}</version>
         </dependency>
         <dependency>
             <groupId>org.camunda.bpm.springboot</groupId>
             <artifactId>camunda-bpm-spring-boot-starter-webapp-ee</artifactId>
-            <version>3.2.1</version>
+            <version>${camunda-springboot.version}</version>
         </dependency>
         <dependency>
             <groupId>com.h2database</groupId>
