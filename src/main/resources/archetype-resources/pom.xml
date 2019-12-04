@@ -41,9 +41,9 @@
         </repository>
     </repositories>
     <properties>
-        <spring.version>2.1.2.RELEASE</spring.version>
+        <spring-boot.version>2.2.1.RELEASE</spring-boot.version>
         <java.version>1.8</java.version>
-        <groovy.version>2.5.6</groovy.version>
+        <groovy.version>2.5.8</groovy.version>
         <camunda.version>7.12.0</camunda.version>
         <camunda-springboot.version>3.4.0</camunda-springboot.version>
         <start-class>com.infarmbureau.${rootArtifactId}.bpm.SpringBootApp</start-class>
@@ -60,7 +60,7 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
-                <version>${spring.version}</version>
+                <version>${spring-boot.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -85,7 +85,7 @@
         </dependency>
         <dependency>
             <groupId>org.camunda.bpm.springboot</groupId>
-            <artifactId>camunda-bpm-spring-boot-starter-webapp-ee</artifactId>
+            <artifactId>camunda-bpm-spring-boot-starter-webapp</artifactId>
             <version>${camunda-springboot.version}</version>
         </dependency>
         <dependency>
@@ -100,7 +100,7 @@
         <dependency>
             <groupId>org.camunda.bpm.springboot</groupId>
             <artifactId>camunda-bpm-spring-boot-starter-test</artifactId>
-            <version>3.2.1</version>
+            <version>${camunda-springboot.version}</version>
         </dependency>
         <dependency>
             <groupId>org.camunda.bpm.extension</groupId>
