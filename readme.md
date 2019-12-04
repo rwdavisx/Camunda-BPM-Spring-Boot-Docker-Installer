@@ -10,34 +10,18 @@ To get setup for local camunda bpm development:
     mvn -v
     ```
     
-2)  Clone, install, and generate from the camunda-starter archetype
-    ```bash
-    git clone http://bitbucket.infarmbureau.com:7990/scm/icaf/camunda-starter.git && \
-    cd camunda-starter && \
-    mvn clean install && \
-    cd .. && 
-    rm -rf camunda-starter && \
-    mvn archetype:generate \
-    -DarchetypeGroupId=com.infarmbureau \
-    -DarchetypeArtifactId=camunda-starter \
-    -DarchetypeVersion=1.0
-    ```
+2)  Install the project to your local machine by running camunda-setup.sh.
     > You will be prompted for an artifactId. This should be a custom name for your new project.
+    > You must also enter valid Camunda EE credentials.
 
-3)  Complete the **Before Running Camunda** licensing section below.
-
-4)  Open the root level of your project and run
-    ```bash
-    mvn clean install
-    ```
-5) Open your project with IntelliJ and run the starter application by clicking the
+4) Open your project with IntelliJ and run the starter application by clicking the
     start button next to the main method in the SpringBootApp class. This should start a
     local BPM instance that runs on the default port [http://localhost:8443/](http://localhost:8443/).
     The default login credentials are Username: demo / Password: demo
     
-6) Complete the **After Startup** part of the licensing section below.
+5) Complete the **After Startup** part of the licensing section below.
 
-7) You should now have a fully unlocked local instance of Camunda enterprise running.
+6) You should now have a fully unlocked local instance of Camunda enterprise running.
 
 You should now have a running BPM application with some demonstration content to reference
 as a starting point. You can browse through the provided code to see how everything works together
@@ -74,25 +58,6 @@ is to use a containerized database that is supported by Camunda.
 
 ### Camunda Enterprise Edition Licensing
 ---
-#### Before running Camunda
-To get Camunda Enterprise working locally, be sure to add the following 
-configuration to your ~/.m2/settings.xml
-    
-    ```xml
-    <settings>
-      <servers>
-        <server>
-          <id>camunda-bpm-nexus-ee</id>
-          <username>indiana_farm_bureau_insurance</username>
-          <password>be3c8276-3523-48a5-9</password>
-        </server>
-      </servers>
-    </settings>
-    ```
-> This step is required *before* running `mvn install` in order authenticate
-> and pull the correct version of camunda bpm from Camunda's private repository.
-
-#### After Startup
 In order to use the Camunda Enterprise webapp, a license key is required.
 
 Please use the following license key to enable enterprise features of the Camunda BPM platform:
