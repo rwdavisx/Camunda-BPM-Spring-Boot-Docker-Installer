@@ -6,22 +6,23 @@
 To get setup for local camunda bpm development:
 
 1)  Verify you have [Maven](https://maven.apache.org/download.cgi) installed on your computer 
-    ```bash
-    mvn -v
+    ```shell script
+      docker run \
+        -e ARTIFACT_ID=yourArtifactId \
+        -e EE_USERNAME=eeUsername \
+        -e EE_PASSWORD=eePassword \
+        -v $(pwd):/app/src \
+      rwdavisx/camunda-ee-starter:latest
     ```
-    
-2)  Install the project to your local machine by running camunda-setup.sh.
-    > You will be prompted for an artifactId. This should be a custom name for your new project.
-    > You must also enter valid Camunda EE credentials.
 
-4) Open your project with IntelliJ and run the starter application by clicking the
+2) Open your project with IntelliJ and run the starter application by clicking the
     start button next to the main method in the SpringBootApp class. This should start a
     local BPM instance that runs on the default port [http://localhost:8443/](http://localhost:8443/).
     The default login credentials are Username: demo / Password: demo
     
-5) Complete the **After Startup** part of the licensing section below.
+3) Complete the **After Startup** part of the licensing section below.
 
-6) You should now have a fully unlocked local instance of Camunda enterprise running.
+4) You should now have a fully unlocked local instance of Camunda enterprise running.
 
 You should now have a running BPM application with some demonstration content to reference
 as a starting point. You can browse through the provided code to see how everything works together

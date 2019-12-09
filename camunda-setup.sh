@@ -1,19 +1,29 @@
-echo "Define value for property 'artifactId': " && \
-read input && \
-echo "Enter Camunda EE Username: " && \
-read username && \
-echo "Enter Camunda EE Password: " && \
-read password && \
-git clone https://bitbucket.infarmbureau.com/scm/icaf/camunda-starter.git && \
-cd camunda-starter && \
-mvn clean install && \
-cd .. &&
-rm -rf camunda-starter && \
+#!/bin/bash
+
+if [ -z "${ARTIFACT_ID}" ]; then
+  echo "Provide an artifactId with -e ARTIFACT_ID=yourArtifactId"
+  exit 1
+fi
+
+if [ -z "${EE_USERNAME}" ]; then
+  echo "Provide the Camunda EE username with -e EE_USERNAME=validUsername"
+  exit 1
+fi
+
+if [ -z "${ARTIFACT_ID}" ]; then
+  echo "Provide the Camunda EE password with -e EE_PASSWORD=validPassword"
+  exit 1
+fi
+
+mkdir -p /app/src/"$ARTIFACT_ID"
+
 mvn archetype:generate \
   -DarchetypeGroupId=com.infarmbureau \
   -DarchetypeArtifactId=camunda-starter \
   -DgroupId=com.infarmbureau \
-  -DartifactId=$input \
-  -DinteractiveMode=false && \
-cd $input && \
-mvn clean install -s settings.xml -Dee_username=$username -Dee_password=$password
+  -DartifactId="$ARTIFACT_ID" \
+  -DinteractiveMode=false
+
+cd "$ARTIFACT_ID"
+mvn clean install -s settings.xml -Dee_username=$EE_USERNAME -Dee_password=$EE_PASSWORD && \
+cp -R * /app/src/"$ARTIFACT_ID"
