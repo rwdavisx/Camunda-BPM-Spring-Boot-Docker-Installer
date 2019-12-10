@@ -28,6 +28,6 @@ public class WelcomeDelegateTest {
         Map<String, Object> outputVariables;
         outputVariables = welcomeDelegate.showMessage(message);
 
-        assertTrue(outputVariables == expectedVariables);
+        assertEquals(outputVariables, expectedVariables);
     }
 }
