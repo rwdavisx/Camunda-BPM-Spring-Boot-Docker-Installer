@@ -12,7 +12,7 @@
       -e EE_USERNAME=eeUsername \
       -e EE_PASSWORD=eePassword \
       -v $(pwd):/app/src \
-    rwdavisx/camunda-ee-starter:latest
+    890342892283.dkr.ecr.us-east-1.amazonaws.com/camunda-starter:latest
     ```
     > Contact the Enterprise Architecture team for Camunda Enterprise Edition Credentials
 
