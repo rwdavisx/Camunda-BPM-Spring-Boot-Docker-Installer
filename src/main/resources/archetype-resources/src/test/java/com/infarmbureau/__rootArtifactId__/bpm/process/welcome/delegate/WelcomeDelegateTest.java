@@ -14,13 +14,13 @@ import static org.junit.Assert.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = {WelcomeDelegate.class, WelcomeServiceImpl.class})
-class WelcomeDelegateTest {
+public class WelcomeDelegateTest {
 
     @Autowired
     private WelcomeDelegate welcomeDelegate;
 
     @Test
-    void WelcomeDelegateDefaultTest() {
+    public void WelcomeDelegateDefaultTest() {
         String message = "Hello World!";
         Map<String, Object> expectedVariables = new HashMap<String, Object>();
         expectedVariables.put("sentMessage", true);

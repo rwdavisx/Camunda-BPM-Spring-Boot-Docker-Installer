@@ -64,7 +64,7 @@ public class TestProcessInstance {
     public TestProcessInstance startProcessWithVariablesAndValidateExists(String processId, Map<String, Object> variables) {
         this.processId = processId;
         this.processInstanceWithVariables = (ProcessInstanceWithVariables) getRuntimeService().startProcessInstanceByKey(processId, variables);
-        Assert.assertTrue(getRuntimeService().createProcessInstanceQuery().processInstanceId(getProcessInstance().getId()).singleResult().getId() == getProcessInstance().getId());
+        Assert.assertTrue(getRuntimeService().createProcessInstanceQuery().processInstanceId(getProcessInstance().getId()).singleResult().getId().equals(getProcessInstance().getId()));
         validateVariablesExist(variables);
         return this;
     }

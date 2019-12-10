@@ -13,7 +13,7 @@ import static org.junit.Assert.assertEquals;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest()
-class WelcomeServiceImplTest {
+public class WelcomeServiceImplTest {
 
     @Autowired
     private WelcomeService welcomeService;
@@ -21,7 +21,7 @@ class WelcomeServiceImplTest {
     final ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
 
     @Test
-    void printMessageTest() {
+    public void printMessageTest() {
         final String message = "Message Test";
 
         System.setOut(new PrintStream(byteArrayOutputStream));
