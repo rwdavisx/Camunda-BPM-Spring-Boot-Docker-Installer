@@ -9,8 +9,6 @@
     ```shell script
     docker run \
       -e ARTIFACT_ID=yourArtifactId \
-      -e EE_USERNAME=eeUsername \
-      -e EE_PASSWORD=eePassword \
       -v $(pwd):/app/src \
     890342892283.dkr.ecr.us-east-1.amazonaws.com/camunda-starter:latest
     ```
