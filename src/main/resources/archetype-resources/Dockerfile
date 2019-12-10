@@ -2,11 +2,8 @@
 # Build stage
 #
 FROM maven:slim AS build
-ARG environment
-ENV ee_username=indiana_farm_bureau_insurance
-ENV ee_password=be3c8276-3523-48a5-9
 RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app/${artifactId}
+WORKDIR /usr/src/app/${ARTIFACT_ID}
 COPY pom.xml pom.xml
 COPY . .
 COPY settings.xml /root/.m2/settings.xml
