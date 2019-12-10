@@ -1,7 +1,7 @@
-#Camunda BPM
+# Camunda BPM
 
-##Quick Start
-###Installation
+## Quick Start
+### Installation
 
 1)  Verify you have [Java](https://www.oracle.com/technetwork/java/javase/downloads/index.html), [Maven](https://maven.apache.org/download.cgi), and [Docker](https://www.docker.com/products/docker-desktop) installed on your computer. 
 
@@ -12,8 +12,7 @@
       -v $(pwd):/app/src \
     890342892283.dkr.ecr.us-east-1.amazonaws.com/camunda-starter:latest
     ```
-    > Contact the Enterprise Architecture team for Camunda Enterprise Edition Credentials
-
+    
 3)  Run the application in IntelliJ by clicking the start button next to the main method 
     in the SpringBootApp class. This should create a new run configuration and start a 
     local BPM instance you can view with [Camunda Cockpit](http://localhost:8443/). 
@@ -21,7 +20,7 @@
     > Default Camunda Cockpit login credentials 
     Username: demo | Password: demo
 
-###Developing BPM Processes
+### Developing BPM Processes
 You should now have a running BPM application with some demonstration content to reference
 as a starting point. You can browse through the provided code to see how everything connects together
 and start creating your own BPM processes. Open the provided **WelcomeProcess.bpmn** for a reference 
@@ -31,7 +30,7 @@ Head over to the [Camunda Docs](https://docs.camunda.org/manual/latest/) to lear
 developing your own bpm processes. You can download the [Camunda Modeller](https://camunda.com/download/modeler/) 
 in order to easily create or modify bpmn files.
 
-##Deploying with Docker
+## Deploying with Docker
 Go to the root of your application:
 ```bash
 docker-compose build
