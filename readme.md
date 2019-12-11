@@ -16,7 +16,7 @@
     
 3)  Package and run your project as a Docker container by running this command from the project root
     ```shell script
-    docker build . --build-arg ENV=dev -t ifbi-camunda && \
+    docker build . -t ifbi-camunda && \
     docker run -p 8080:8080 -p 8443:8443 --name hello-world-camunda ifbi-camunda
     ```
     The first command will create an image of your project

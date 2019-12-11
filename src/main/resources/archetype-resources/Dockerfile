@@ -9,10 +9,9 @@ RUN mvn -B -f /tmp/pom.xml -s /usr/share/maven/ref/settings-docker.xml dependenc
 # Build stage
 #
 FROM maven:3.6.3-ibmjava-8-alpine AS build
-ARG ENV
 COPY . /tmp
 COPY --from=pack /usr/share/maven/ref/repository /usr/share/maven/ref/repository
-RUN mvn -B -f /tmp/pom.xml -s /usr/share/maven/ref/settings-docker.xml package -P $ENV
+RUN mvn -B -f /tmp/pom.xml -s /usr/share/maven/ref/settings-docker.xml package
 
 #
 # Dist stage
