@@ -1,18 +1,23 @@
 #
-# Build stage
+# Packaging stage
 #
-FROM maven:slim AS build
-WORKDIR /src/app
-COPY pom.xml pom.xml
-COPY . .
-COPY settings.xml /root/.m2/settings.xml
-RUN mvn clean package -P dev
+FROM maven:3.6.3-ibmjava-8-alpine AS pack
+COPY pom.xml /tmp/pom.xml
+RUN mvn -B -f /tmp/pom.xml -s /usr/share/maven/ref/settings-docker.xml dependency:resolve
 
 #
-# Package stage
+# Build stage
+#
+FROM maven:3.6.3-ibmjava-8-alpine AS build
+COPY . /tmp
+COPY --from=pack /usr/share/maven/ref/repository /usr/share/maven/ref/repository
+RUN mvn -B -f /tmp/pom.xml -s /usr/share/maven/ref/settings-docker.xml package
+
+#
+# Dist stage
 #
 FROM openjdk:8-jdk-alpine
-COPY --from=build /src/app/target/${artifactId}-${version}.jar /dist/app.jar
+COPY --from=build /tmp/target/${artifactId}-${version}.jar /dist/app.jar
 EXPOSE 8080
 EXPOSE 8443
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/dist/app.jar"]
+ENTRYPOINT ["java","-jar","/dist/app.jar"]
