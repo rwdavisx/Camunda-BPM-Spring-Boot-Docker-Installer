@@ -24,7 +24,7 @@ public class WelcomeDelegate implements JavaDelegate {
 
     @Override
     public void execute(DelegateExecution execution) throws Exception {
-        LOGGER.info("Entering ${execution.getProcessDefinitionId()}");
+        LOGGER.info("Entering " + execution.getProcessDefinitionId());
         WelcomeProcessVariables vars = new WelcomeProcessVariables(execution);
         String message = vars.getWelcomeMessage();
         try {
@@ -33,7 +33,7 @@ public class WelcomeDelegate implements JavaDelegate {
         } catch (Exception e) {
             throw new BpmnError("Generic Exception");
         }
-        LOGGER.info("Exiting ${execution.getProcessDefinitionId()}");
+        LOGGER.info("Exiting " + execution.getProcessDefinitionId());
     }
 
     public Map<String, Object> showMessage(String message) {
