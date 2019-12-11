@@ -1,8 +1,8 @@
-package com.infarmbureau.${rootArtifactId}.bpm.process.welcome;
+package ${groupId}.${rootArtifactId}.bpm.process.welcome;
 
-import com.infarmbureau.${rootArtifactId}.bpm.service.welcome.WelcomeService;
-import com.infarmbureau.${rootArtifactId}.bpm.util.TestProcessInstance;
-import com.infarmbureau.${rootArtifactId}.bpm.process.welcome.delegate.WelcomeDelegate;
+import ${groupId}.${rootArtifactId}.bpm.service.welcome.WelcomeService;
+import ${groupId}.${rootArtifactId}.bpm.util.TestProcessInstance;
+import ${groupId}.${rootArtifactId}.bpm.process.welcome.delegate.WelcomeDelegate;
 import org.camunda.bpm.engine.test.Deployment;
 import org.camunda.bpm.engine.test.ProcessEngineRule;
 import org.camunda.bpm.engine.test.mock.Mocks;
@@ -23,13 +23,13 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import static com.infarmbureau.${rootArtifactId}.bpm.process.welcome.WelcomeProcessConstants.*;
+import static ${groupId}.${rootArtifactId}.bpm.process.welcome.WelcomeProcessConstants.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.doReturn;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = {WelcomeProcessTest.class, TestProcessInstance.class, WelcomeDelegate.class})
-@Deployment(resources = {"com/infarmbureau/${rootArtifactId}/bpm/process/welcome/WelcomeProcess.bpmn"})
+@Deployment(resources = {"${groupId}/${rootArtifactId}/bpm/process/welcome/WelcomeProcess.bpmn"})
 public class WelcomeProcessTest {
 
     @Rule

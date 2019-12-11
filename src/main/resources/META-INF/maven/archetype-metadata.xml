@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <archetype-descriptor name="${artifactId}">
     <requiredProperties>
-        <requiredProperty key="groupId">
-            <defaultValue>com.infarmbureau</defaultValue>
-        </requiredProperty>
+        <requiredProperty key="groupId"/>
         <requiredProperty key="artifactId"/>
         <requiredProperty key="version">
             <defaultValue>1.0</defaultValue>
@@ -11,10 +9,8 @@
     </requiredProperties>
     <fileSets>
         <fileSet filtered="true" encoding="UTF-8">
-            <directory></directory>
             <includes>
                 <include>*.gitignore</include>
-                <include>docker-compose.yml</include>
                 <include>Dockerfile</include>
                 <include>settings.xml</include>
             </includes>
@@ -31,7 +27,6 @@
                 <include>**/*.bpmn</include>
                 <include>**/*.properties</include>
                 <include>**/*.xml</include>
-                <include>**/keystore.p12</include>
             </includes>
         </fileSet>
         <fileSet filtered="true" encoding="UTF-8">

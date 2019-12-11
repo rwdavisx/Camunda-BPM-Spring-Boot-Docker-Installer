@@ -1,6 +1,6 @@
-package com.infarmbureau.${rootArtifactId}.bpm.process.welcome.delegate;
+package ${groupId}.${rootArtifactId}.bpm.process.welcome.delegate;
 
-import com.infarmbureau.${rootArtifactId}.bpm.service.welcome.WelcomeServiceImpl;
+import ${groupId}.${rootArtifactId}.bpm.service.welcome.WelcomeServiceImpl;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

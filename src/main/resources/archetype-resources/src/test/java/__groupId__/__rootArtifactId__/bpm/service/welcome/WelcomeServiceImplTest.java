@@ -1,4 +1,4 @@
-package com.infarmbureau.${rootArtifactId}.bpm.service.welcome;
+package ${groupId}.${rootArtifactId}.bpm.service.welcome;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

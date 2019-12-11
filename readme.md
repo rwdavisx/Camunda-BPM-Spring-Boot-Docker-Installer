@@ -8,14 +8,15 @@
 2)  Run this Docker command in the directory you want to install your Camunda project
     ```shell script
     docker run \
-      -e ARTIFACT_ID=HelloWorld \
+      -e GROUP_ID=com.infarmbureau \
+      -e ARTIFACT_ID=helloWorld \
       -v $(pwd):/dist \
     890342892283.dkr.ecr.us-east-1.amazonaws.com/camunda-starter:latest
     ```
     
 3)  Package and run your project as a Docker container by running this command from the project root
     ```shell script
-    docker build . -t ifbi-camunda && \
+    docker build . --build-arg ENV=dev -t ifbi-camunda && \
     docker run -p 8080:8080 -p 8443:8443 --name hello-world-camunda ifbi-camunda
     ```
     The first command will create an image of your project

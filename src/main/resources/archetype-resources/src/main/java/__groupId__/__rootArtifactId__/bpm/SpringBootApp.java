@@ -1,4 +1,4 @@
-package com.infarmbureau.${rootArtifactId}.bpm;
+package ${groupId}.${rootArtifactId}.bpm;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

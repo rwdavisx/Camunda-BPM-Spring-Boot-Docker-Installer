@@ -1,4 +1,4 @@
-package com.infarmbureau.${rootArtifactId}.bpm.process.welcome;
+package ${groupId}.${rootArtifactId}.bpm.process.welcome;
 
 import org.camunda.bpm.engine.delegate.VariableScope;
 

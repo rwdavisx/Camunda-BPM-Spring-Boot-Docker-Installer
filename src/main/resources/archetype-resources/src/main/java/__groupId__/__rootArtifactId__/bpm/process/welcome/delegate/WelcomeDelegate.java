@@ -1,7 +1,7 @@
-package com.infarmbureau.${rootArtifactId}.bpm.process.welcome.delegate;
+package ${groupId}.${rootArtifactId}.bpm.process.welcome.delegate;
 
-import com.infarmbureau.${rootArtifactId}.bpm.process.welcome.WelcomeProcessVariables;
-import com.infarmbureau.${rootArtifactId}.bpm.service.welcome.WelcomeService;
+import ${groupId}.${rootArtifactId}.bpm.process.welcome.WelcomeProcessVariables;
+import ${groupId}.${rootArtifactId}.bpm.service.welcome.WelcomeService;
 import org.camunda.bpm.engine.delegate.BpmnError;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;

@@ -1,6 +1,6 @@
-package com.infarmbureau.${rootArtifactId}.bpm;
+package ${groupId}.${rootArtifactId}.bpm;
 
-import com.infarmbureau.${rootArtifactId}.bpm.util.AppProperties;
+import ${groupId}.${rootArtifactId}.bpm.util.AppProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -10,7 +10,7 @@ import org.springframework.jdbc.datasource.SimpleDriverDataSource;
 import javax.sql.DataSource;
 
 @Configuration
-@Profile("prod")
+@Profile("dev")
 public class ProcessEngineConfiguration {
 
     @Autowired
