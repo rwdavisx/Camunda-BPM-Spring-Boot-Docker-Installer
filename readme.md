@@ -13,12 +13,22 @@
     890342892283.dkr.ecr.us-east-1.amazonaws.com/camunda-starter:latest
     ```
     
-3)  Run the application in IntelliJ by clicking the start button next to the main method 
-    in the SpringBootApp class. This should create a new run configuration and start a 
-    local BPM instance you can view with [Camunda Cockpit](http://localhost:8443/). 
-    
+3)  Package and run your project as a Docker container by running this command from the project root
+    ```shell script
+    docker build . -t yourImageName && \
+    docker run -p 8080:8080 -p 8443:8443 --name yourContainerName yourImageName
+    ```
+    The first command will create an image of your project
+    The second command will create a running instance, ie "container", of that image
+    This container will then expose [Camunda Cockpit](http://localhost:8443/)
+   
     > Default Camunda Cockpit login credentials 
     Username: demo | Password: demo
+    
+    To shut the container down run 
+    ```shell script
+    docker container stop yourContainerName
+    ```
 
 ### Developing BPM Processes
 You should now have a running BPM application with some demonstration content to reference
@@ -30,15 +40,15 @@ Head over to the [Camunda Docs](https://docs.camunda.org/manual/latest/) to lear
 developing your own bpm processes. You can download the [Camunda Modeller](https://camunda.com/download/modeler/) 
 in order to easily create or modify bpmn files.
 
-## Deploying with Docker
+## External Databases
 Go to the root of your application:
 ```bash
 docker-compose build
 ```
 
-This will build a containerized image of your application.
+This will rebuild your application's docker image.
 
-To start the container
+To start the preconfigured docker services
 ```bash
 docker-compose up
 ```
