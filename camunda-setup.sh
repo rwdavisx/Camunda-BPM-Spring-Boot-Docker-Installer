@@ -15,9 +15,7 @@ fi
 #  exit 1
 #fi
 
-mkdir -p /app/src/"$ARTIFACT_ID"
-
-mvn archetype:generate \
+mvn -B -s /usr/share/maven/ref/settings-docker.xml archetype:generate \
   -DarchetypeGroupId=com.infarmbureau \
   -DarchetypeArtifactId=camunda-starter \
   -DgroupId=com.infarmbureau \
@@ -25,6 +23,6 @@ mvn archetype:generate \
   -DinteractiveMode=false
 
 cd "$ARTIFACT_ID"
-mvn clean install \
-#  -gs settings.xml -Dee_username=$EE_USERNAME -Dee_password=$EE_PASSWORD
-cp -R * /app/src/"$ARTIFACT_ID"
+mvn install
+mkdir -p /dist/"$ARTIFACT_ID"
+cp -R * /dist/"$ARTIFACT_ID"

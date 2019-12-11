@@ -1,19 +1,21 @@
-# Clone the repository
-FROM alpine/git as clone
+#
+# Packaging stage
+#
+FROM maven:3.6.3-ibmjava-8-alpine AS pack
+COPY . /tmp
+RUN mvn -B -f /tmp/pom.xml -s /usr/share/maven/ref/settings-docker.xml install
 
-WORKDIR /app
-RUN git clone https://bitbucket.infarmbureau.com/scm/icaf/camunda-starter.git && \
-	cd camunda-starter && \
-	git checkout master
+## Install stage
+#FROM maven:3.6.3-ibmjava-8-alpine AS install
+#
+#COPY --from=pack /usr/share/maven/ref/repository /usr/share/maven/ref/repository
+#
 
-# Install the Archetype
-FROM maven:latest as install
-
-WORKDIR /app
-COPY --from=clone /app/camunda-starter /app
-RUN mvn clean install
-RUN cd .. && \
-    rm -r /app/*
-COPY camunda-setup.sh ./
-RUN ["chmod", "+x", "./camunda-setup.sh"]
-ENTRYPOINT ["./camunda-setup.sh"]
+#
+# Run stage
+#
+FROM maven:3.6.3-ibmjava-8-alpine AS run
+COPY camunda-setup.sh /tmp/camunda-setup.sh
+COPY --from=pack /usr/share/maven/ref/repository /usr/share/maven/ref/repository
+#RUN ["chmod", "+x", "/tmp/camunda-setup.sh"]
+ENTRYPOINT ["/tmp/camunda-setup.sh"]

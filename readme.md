@@ -8,15 +8,15 @@
 2)  Run this Docker command from a directory you want to install the camunda-starter project
     ```shell script
     docker run \
-      -e ARTIFACT_ID=yourArtifactId \
-      -v $(pwd):/app/src \
+      -e ARTIFACT_ID=HelloWorld \
+      -v $(pwd):/tmp \
     890342892283.dkr.ecr.us-east-1.amazonaws.com/camunda-starter:latest
     ```
     
 3)  Package and run your project as a Docker container by running this command from the project root
     ```shell script
-    docker build . -t yourImageName && \
-    docker run -p 8080:8080 -p 8443:8443 --name yourContainerName yourImageName
+    docker build . -t camunda-starter && \
+    docker run -p 8080:8080 -p 8443:8443 --name camunda camunda-starter
     ```
     The first command will create an image of your project
     The second command will create a running instance, ie "container", of that image
@@ -27,7 +27,7 @@
     
     To shut the container down run 
     ```shell script
-    docker container stop yourContainerName
+    docker container stop camunda
     ```
 
 ### Developing BPM Processes

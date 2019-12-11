@@ -16,7 +16,7 @@ public class ProcessEngineConfiguration {
     @Autowired
     AppProperties properties;
 
-////    Uncomment to activate external database. (Be sure to configure .properties correctly)
+////    Uncomment to activate an external database. (Be sure to configure application-{env}.properties correctly)
 //    @Bean
 //    DataSource dataSource() {
 //        SimpleDriverDataSource dataSource = new SimpleDriverDataSource()
