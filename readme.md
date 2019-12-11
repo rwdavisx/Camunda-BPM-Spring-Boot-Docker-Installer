@@ -9,7 +9,7 @@
     ```shell script
     docker run \
       -e ARTIFACT_ID=HelloWorld \
-      -v $(pwd):/tmp \
+      -v $(pwd):/dist \
     890342892283.dkr.ecr.us-east-1.amazonaws.com/camunda-starter:latest
     ```
     
