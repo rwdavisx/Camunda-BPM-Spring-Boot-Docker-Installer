@@ -1,8 +1,8 @@
-package ${groupId}.${rootArtifactId}.bpm.process.welcome;
+package ${groupId}.${rootArtifactId}.bpm.process.example;
 
-import ${groupId}.${rootArtifactId}.bpm.service.welcome.WelcomeService;
+import ${groupId}.${rootArtifactId}.bpm.service.example.ExampleService;
 import ${groupId}.${rootArtifactId}.bpm.util.TestProcessInstance;
-import ${groupId}.${rootArtifactId}.bpm.process.welcome.delegate.WelcomeDelegate;
+import ${groupId}.${rootArtifactId}.bpm.process.example.delegate.ExampleDelegate;
 import org.camunda.bpm.engine.test.Deployment;
 import org.camunda.bpm.engine.test.ProcessEngineRule;
 import org.camunda.bpm.engine.test.mock.Mocks;
@@ -23,14 +23,14 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import static ${groupId}.${rootArtifactId}.bpm.process.welcome.WelcomeProcessConstants.*;
+import static ${groupId}.${rootArtifactId}.bpm.process.example.ExampleProcessConstants.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.doReturn;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = {WelcomeProcessTest.class, TestProcessInstance.class, WelcomeDelegate.class})
-@Deployment(resources = {"${groupId}/${rootArtifactId}/bpm/process/welcome/WelcomeProcess.bpmn"})
-public class WelcomeProcessTest {
+@SpringBootTest(classes = {ExampleProcessTest.class, TestProcessInstance.class, ExampleDelegate.class})
+@Deployment(resources = {"${groupId}/${rootArtifactId}/bpm/process/example/ExampleProcess.bpmn"})
+public class ExampleProcessTest {
 
     @Rule
     public ProcessEngineRule processEngineRule = new StandaloneInMemoryTestConfiguration().rule();
@@ -39,14 +39,14 @@ public class WelcomeProcessTest {
     public TestProcessInstance testProcessInstance;
 
     @MockBean
-    private WelcomeService welcomeService;
+    private ExampleService exampleService;
 
     @SpyBean
-    private WelcomeDelegate welcomeDelegate;
+    private ExampleDelegate exampleDelegate;
 
     @Before
     public void setup() {
-        Mocks.getMocks().put("welcomeDelegate", welcomeDelegate);
+        Mocks.getMocks().put("exampleDelegate", exampleDelegate);
     }
 
     @After
@@ -55,38 +55,38 @@ public class WelcomeProcessTest {
     }
 
     @Test
-    public void welcomeProcessDefaultFlowTest() {
+    public void exampleProcessDefaultFlowTest() {
         Map<String, Object> startVariables = new HashMap<String, Object>();
         startVariables.put("defaultFlow", true);
-        Map<String, Object> welcomeDelegateOutput = new HashMap<String, Object>();
-        welcomeDelegateOutput.put("exampleVar1", 1337);
-        welcomeDelegateOutput.put("exampleVar2", true);
-        doReturn(welcomeDelegateOutput).when(welcomeDelegate).showMessage((String) any());
+        Map<String, Object> exampleDelegateOutput = new HashMap<String, Object>();
+        exampleDelegateOutput.put("exampleVar1", 1337);
+        exampleDelegateOutput.put("exampleVar2", true);
+        doReturn(exampleDelegateOutput).when(exampleDelegate).showMessage((String) any());
         List<String> userTaskIds = new LinkedList<String>();
         userTaskIds.add(USERTASK_DEFAULT);
 
         testProcessInstance
-                .startProcessWithVariablesAndValidateExists(PROCESSKEY_WELCOME, startVariables)
+                .startProcessWithVariablesAndValidateExists(PROCESSKEY_EXAMPLE, startVariables)
                 .validateAndCompleteUserTasksWithVariables(userTaskIds, new HashMap<String, Object>())
-                .validateVariablesExist(welcomeDelegateOutput)
+                .validateVariablesExist(exampleDelegateOutput)
                 .validateIsEnded();
     }
 
     @Test
-    public void welcomeProcessSecondaryFlowTest() {
+    public void exampleProcessSecondaryFlowTest() {
         Map<String, Object> startVariables = new HashMap<String, Object>();
         startVariables.put("defaultFlow", false);
-        Map<String, Object> welcomeDelegateOutput = new HashMap<String, Object>();
-        welcomeDelegateOutput.put("exampleVar1", 1337);
-        welcomeDelegateOutput.put("exampleVar2", true);
-        doReturn(welcomeDelegateOutput).when(welcomeDelegate).showMessage((String) any());
+        Map<String, Object> exampleDelegateOutput = new HashMap<String, Object>();
+        exampleDelegateOutput.put("exampleVar1", 1337);
+        exampleDelegateOutput.put("exampleVar2", true);
+        doReturn(exampleDelegateOutput).when(exampleDelegate).showMessage((String) any());
         List<String> userTaskIds = new LinkedList<String>();
         userTaskIds.add(USERTASK_SECONDARY);
 
         testProcessInstance
-                .startProcessWithVariablesAndValidateExists(PROCESSKEY_WELCOME, startVariables)
+                .startProcessWithVariablesAndValidateExists(PROCESSKEY_EXAMPLE, startVariables)
                 .validateAndCompleteUserTasksWithVariables(userTaskIds, new HashMap<String, Object>())
-                .validateVariablesExist(welcomeDelegateOutput)
+                .validateVariablesExist(exampleDelegateOutput)
                 .validateIsEnded();
     }
 }

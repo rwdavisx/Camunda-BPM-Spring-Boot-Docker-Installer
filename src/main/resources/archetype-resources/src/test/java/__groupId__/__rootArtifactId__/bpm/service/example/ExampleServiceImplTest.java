@@ -1,4 +1,4 @@
-package ${groupId}.${rootArtifactId}.bpm.service.welcome;
+package ${groupId}.${rootArtifactId}.bpm.service.example;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,10 +13,10 @@ import static org.junit.Assert.assertEquals;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest()
-public class WelcomeServiceImplTest {
+public class ExampleServiceImplTest {
 
     @Autowired
-    private WelcomeService welcomeService;
+    private ExampleService exampleService;
 
     final ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
 
@@ -25,7 +25,7 @@ public class WelcomeServiceImplTest {
         final String message = "Message Test";
 
         System.setOut(new PrintStream(byteArrayOutputStream));
-        welcomeService.printMessage(message);
+        exampleService.printMessage(message);
         assertEquals(message, byteArrayOutputStream.toString().trim());
     }
 }

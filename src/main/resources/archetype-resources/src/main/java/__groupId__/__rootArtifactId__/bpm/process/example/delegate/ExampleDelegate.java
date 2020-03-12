@@ -1,7 +1,7 @@
-package ${groupId}.${rootArtifactId}.bpm.process.welcome.delegate;
+package ${groupId}.${rootArtifactId}.bpm.process.example.delegate;
 
-import ${groupId}.${rootArtifactId}.bpm.process.welcome.WelcomeProcessVariables;
-import ${groupId}.${rootArtifactId}.bpm.service.welcome.WelcomeService;
+import ${groupId}.${rootArtifactId}.bpm.process.example.ExampleProcessVariables;
+import ${groupId}.${rootArtifactId}.bpm.service.example.ExampleService;
 import org.camunda.bpm.engine.delegate.BpmnError;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
@@ -14,19 +14,19 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Component
-public class WelcomeDelegate implements JavaDelegate {
-    private static final Logger LOGGER = LoggerFactory.getLogger(WelcomeDelegate.class);
+public class ExampleDelegate implements JavaDelegate {
+    private static final Logger LOGGER = LoggerFactory.getLogger(ExampleDelegate.class);
 
     @Autowired
-    WelcomeService welcomeService;
+    ExampleService exampleService;
 
     private Map<String, Object> outputVariables;
 
     @Override
     public void execute(DelegateExecution execution) throws Exception {
         LOGGER.info("Entering " + execution.getProcessDefinitionId());
-        WelcomeProcessVariables vars = new WelcomeProcessVariables(execution);
-        String message = vars.getWelcomeMessage();
+        ExampleProcessVariables vars = new ExampleProcessVariables(execution);
+        String message = vars.getExampleMessage();
         try {
             outputVariables = showMessage(message);
             execution.setVariables(outputVariables);
@@ -37,7 +37,7 @@ public class WelcomeDelegate implements JavaDelegate {
     }
 
     public Map<String, Object> showMessage(String message) {
-        welcomeService.printMessage(message);
+        exampleService.printMessage(message);
         HashMap map = new HashMap();
         map.put("sentMessage", true);
         return map;

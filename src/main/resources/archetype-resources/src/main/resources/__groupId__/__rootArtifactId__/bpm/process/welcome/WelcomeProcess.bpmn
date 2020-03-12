@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_1tdirn8" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="2.2.4">
   <bpmn:collaboration id="Collaboration_0djv9x7">
-    <bpmn:participant id="Participant_0ezilsi" name="Welcome Process" processRef="welcomeProcess" />
+    <bpmn:participant id="Participant_0ezilsi" name="Example Process" processRef="exampleProcess" />
   </bpmn:collaboration>
-  <bpmn:process id="welcomeProcess" name="Welcome" isExecutable="true" camunda:versionTag="1">
+  <bpmn:process id="exampleProcess" name="Example" isExecutable="true" camunda:versionTag="1">
     <bpmn:startEvent id="StartEvent_1">
       <bpmn:outgoing>SequenceFlow_016ws4c</bpmn:outgoing>
     </bpmn:startEvent>
-    <bpmn:serviceTask id="Task_04ztb00" name="Welcome" camunda:delegateExpression="${welcomeDelegate}">
+    <bpmn:serviceTask id="Task_04ztb00" name="Example" camunda:delegateExpression="${exampleDelegate}">
       <bpmn:incoming>SequenceFlow_016ws4c</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1cq1dxx</bpmn:outgoing>
     </bpmn:serviceTask>
     <bpmn:sequenceFlow id="SequenceFlow_016ws4c" sourceRef="StartEvent_1" targetRef="Task_04ztb00" />
     <bpmn:sequenceFlow id="SequenceFlow_1cq1dxx" sourceRef="Task_04ztb00" targetRef="ExclusiveGateway_1fjnyap" />
-    <bpmn:sequenceFlow id="SequenceFlow_02gx3pt" sourceRef="default" targetRef="welcomeProcessEnd" />
-    <bpmn:endEvent id="welcomeProcessEnd">
+    <bpmn:sequenceFlow id="SequenceFlow_02gx3pt" sourceRef="default" targetRef="exampleProcessEnd" />
+    <bpmn:endEvent id="exampleProcessEnd">
       <bpmn:incoming>SequenceFlow_02gx3pt</bpmn:incoming>
       <bpmn:incoming>SequenceFlow_1pbytxh</bpmn:incoming>
     </bpmn:endEvent>
@@ -35,7 +35,7 @@
       <bpmn:incoming>SequenceFlow_0iah8jx</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_02gx3pt</bpmn:outgoing>
     </bpmn:userTask>
-    <bpmn:sequenceFlow id="SequenceFlow_1pbytxh" sourceRef="secondary" targetRef="welcomeProcessEnd" />
+    <bpmn:sequenceFlow id="SequenceFlow_1pbytxh" sourceRef="secondary" targetRef="exampleProcessEnd" />
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_0djv9x7">
@@ -48,7 +48,7 @@
       <bpmndi:BPMNShape id="UserTask_0eda7hm_di" bpmnElement="default">
         <dc:Bounds x="482" y="80" width="100" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="EndEvent_014s326_di" bpmnElement="welcomeProcessEnd">
+      <bpmndi:BPMNShape id="EndEvent_014s326_di" bpmnElement="exampleProcessEnd">
         <dc:Bounds x="704" y="102" width="36" height="36" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="ServiceTask_0mnmoj2_di" bpmnElement="Task_04ztb00">

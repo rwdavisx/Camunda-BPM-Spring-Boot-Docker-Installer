@@ -34,7 +34,7 @@
 ### Developing BPM Processes
 You should now have a running BPM application with some demonstration content to reference
 as a starting point. You can browse through the provided code to see how everything connects together
-and start creating your own BPM processes. Open the provided **WelcomeProcess.bpmn** for a reference 
+and start creating your own BPM processes. Open the provided **ExampleProcess.bpmn** for a reference 
 on how code integrates with a modeled process.
 
 Head over to the [Camunda Docs](https://docs.camunda.org/manual/latest/) to learn how to get started 
@@ -49,8 +49,8 @@ bpm best practice by keeping the implementation logic of processes out of the bp
 this practice, robust BPM applications can be built and developers will be confident in knowing if
 a code change will break any piece of the system.
 
-For reference, look at the difference between the tests located in *WelcomeProcessTest.java*
-and *WelcomeDelegateTest.java*
+For reference, look at the difference between the tests located in *ExampleProcessTest.java*
+and *ExampleDelegateTest.java*
 
 > Note: You can not test timer events because of a Camunda limitation.
 > Write tests around timers if you need to test a process with a timer.
