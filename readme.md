@@ -8,7 +8,7 @@
 2)  Run this Docker command in the directory you want to install your Camunda project
     ```shell script
     docker run \
-      -e GROUP_ID=com.infarmbureau \
+      -e GROUP_ID=com.yourCompanyHere \
       -e ARTIFACT_ID=helloWorld \
       -v $(pwd):/dist \
     rwdavisx/camunda-bpm-spring-boot-starter:latest

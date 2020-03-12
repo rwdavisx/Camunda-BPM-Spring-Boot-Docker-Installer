@@ -11,7 +11,7 @@ if [ -z "${ARTIFACT_ID}" ]; then
 fi
 
 mvn -B -s /usr/share/maven/ref/settings-docker.xml archetype:generate \
-  -DarchetypeGroupId=com.infarmbureau \
+  -DarchetypeGroupId=com.rwdavisx \
   -DarchetypeArtifactId=camunda-starter \
   -DgroupId="$GROUP_ID" \
   -DartifactId="$ARTIFACT_ID" \
