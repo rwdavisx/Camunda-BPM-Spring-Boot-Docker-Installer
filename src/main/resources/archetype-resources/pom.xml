@@ -47,7 +47,7 @@
         <camunda-springboot.version>3.4.0</camunda-springboot.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <start-class>${groupdId}.{artifactId}.bpm.SpringBootApp</start-class>
+        <start-class>${groupId}.{artifactId}.bpm.SpringBootApp</start-class>
     </properties>
     <dependencyManagement>
         <dependencies>

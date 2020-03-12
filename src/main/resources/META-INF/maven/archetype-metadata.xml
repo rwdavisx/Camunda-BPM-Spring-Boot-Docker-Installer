@@ -9,10 +9,13 @@
     </requiredProperties>
     <fileSets>
         <fileSet filtered="true" encoding="UTF-8">
+            <directory></directory>
             <includes>
+                <include>.gitignore</include>
                 <include>*.gitignore</include>
+                <include>**/*.gitignore</include>
                 <include>Dockerfile</include>
-                <include>settings.xml</include>
+                <include>pom.xml</include>
             </includes>
         </fileSet>
         <fileSet filtered="true" encoding="UTF-8">

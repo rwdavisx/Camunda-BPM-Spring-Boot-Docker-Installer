@@ -11,7 +11,7 @@
       -e GROUP_ID=com.infarmbureau \
       -e ARTIFACT_ID=helloWorld \
       -v $(pwd):/dist \
-    890342892283.dkr.ecr.us-east-1.amazonaws.com/camunda-starter:latest
+    rwdavisx/camunda-bpm-spring-boot-starter:latest
     ```
     
 3)  Package and run your project as a Docker container by running this command from the project root
