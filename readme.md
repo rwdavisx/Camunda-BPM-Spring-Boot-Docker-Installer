@@ -11,7 +11,7 @@
       -e GROUP_ID=com.yourCompanyHere \
       -e ARTIFACT_ID=helloWorld \
       -v $(pwd):/dist \
-    rwdavisx/camunda-bpm-spring-boot-starter:latest
+    rwdavisx/camunda-bpm-spring-boot-installer:latest
     ```
     
 3)  Package and run your project as a Docker container by running this command from the project root
