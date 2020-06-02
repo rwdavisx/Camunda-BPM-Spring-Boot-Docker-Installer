@@ -13,11 +13,11 @@
       -v $(pwd):/dist \
     ifbi/camunda-bpm-spring-boot-installer:latest
     ```
-    
-3)  Package and run your project as a Docker container by running this command from the project root:
     ```shell script
     cd workflow
     ```
+    
+3)  Package and run your project as a Docker container by running this command from the project root:
     
     ```shell script
     docker build . -t ifbi-camunda && \
