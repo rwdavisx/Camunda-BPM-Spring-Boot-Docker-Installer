@@ -6,11 +6,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringBootApp {
+public class Application {
     private static final Logger LOGGER = LoggerFactory.getLogger(SpringBootApp.class);
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringBootApp.class, args);
+        SpringApplication.run(Application.class, args);
         LOGGER.info("Camunda App Started!");
     }
 }

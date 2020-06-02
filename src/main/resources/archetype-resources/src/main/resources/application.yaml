@@ -1,0 +1,18 @@
+# Camunda
+camunda.bpm:
+  admin-user:
+    id: demo
+    password: demo
+    firstName: Demo
+    last-name: Demo
+  filter:
+    create: All tasks
+  history-level: activity
+  database:
+    schedma-update: true
+
+# Tomcat Config
+server.port: 8443
+
+# Logs
+logging.level.root: INFO
