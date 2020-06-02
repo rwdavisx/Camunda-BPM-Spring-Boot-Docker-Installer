@@ -8,13 +8,17 @@
 2)  Run this Docker command in the directory you want to install your Camunda project
     ```shell script
     docker run \
-      -e GROUP_ID=com.yourCompanyHere \
-      -e ARTIFACT_ID=helloWorld \
+      -e GROUP_ID=com.example \
+      -e ARTIFACT_ID=workflow \
       -v $(pwd):/dist \
     ifbi/camunda-bpm-spring-boot-installer:latest
     ```
     
-3)  Package and run your project as a Docker container by running this command from the project root
+3)  Package and run your project as a Docker container by running this command from the project root:
+    ```shell script
+    cd workflow
+    ```
+    
     ```shell script
     docker build . -t ifbi-camunda && \
     docker run -p 8080:8080 -p 8443:8443 --name hello-world-camunda ifbi-camunda
